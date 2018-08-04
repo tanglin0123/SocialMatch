@@ -1,0 +1,81 @@
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">欢迎 {{userInfo.nickName}} 来约球</text>
+    </block>
+  </view>
+
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section section_gap">
+      <view class="section__title">手机</view>
+      <input name="input" placeholder="13800138000"></input>
+    </view>
+
+    <view class="section">
+      <picker mode="date" value="{{date}}" start="Date.now()" end="Date.now() + 7" bindchange="bindDateChange">
+        <view class="picker">
+          日期: {{date}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="section">
+      <view class="section__title">时间：</view>
+      <picker mode="time" value="{{fromtime}}" start="00:00" end="23:59" bindchange="bindFromTimeChange">
+        <view class="picker">
+          从: {{fromtime}}
+        </view>
+      </picker>
+
+      <picker mode="time" value="{{totime}}" start="00:00" end="23:59" bindchange="bindToTimeChange">
+        <view class="picker">
+          到: {{totime}}
+        </view>
+      </picker>
+    </view>
+
+    <!-- <view class="section">
+      <view class="section__title">时间：到：</view>
+      
+    </view> -->
+
+    <!-- <view class="section section_gap">
+      <view class="section__title">switch</view>
+      <switch name="switch" />
+    </view> -->
+
+    <view class="section section_gap">
+      <view class="section__title">slider</view>
+      <slider name="slider" show-value></slider>
+    </view>
+
+    <view class="section">
+      <view class="section__title">input</view>
+      <input name="input" placeholder="please input here" />
+    </view>
+    <view class="section section_gap">
+      <view class="section__title">radio</view>
+      <radio-group name="radio-group">
+        <label>
+          <radio value="radio1" />radio1</label>
+        <label>
+          <radio value="radio2" />radio2</label>
+      </radio-group>
+    </view>
+    <view class="section section_gap">
+      <view class="section__title">checkbox</view>
+      <checkbox-group name="checkbox">
+        <label>
+          <checkbox value="checkbox1" />checkbox1</label>
+        <label>
+          <checkbox value="checkbox2" />checkbox2</label>
+      </checkbox-group>
+    </view>
+    <view class="btn-area">
+      <button formType="submit">提交</button>
+      <button formType="reset">重置</button>
+    </view>
+  </form>
+</view>

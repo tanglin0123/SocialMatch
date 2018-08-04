@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/posting/posting",
+    "pages/friends/friends",
+    "pages/records/records"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "网上约球",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/posting/posting",
+        "text": "我要约球"
+      },
+      {
+        "pagePath": "pages/friends/friends",
+        "text": "寻找球友"
+      },
+      {
+        "pagePath": "pages/records/records",
+        "text": "约球记录"
+      }
+    ]
+  }
+}
