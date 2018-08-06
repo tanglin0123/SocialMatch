@@ -14,7 +14,7 @@
     </view>
 
     <view class="section">
-      <view class="section__title">日期: </view>
+      <view class="section__title">日期 </view>
       <picker mode="date" value="{{date}}" start="Date.now()" end="Date.now() + 7" bindchange="bindDateChange">
         <view class="picker">
           {{date}}
@@ -23,24 +23,24 @@
     </view>
 
     <view class="section">
-      <view class="section__title">时间：</view>
+      <view class="section__title">时间 </view>
       <picker mode="time" value="{{fromtime}}" start="00:00" end="23:59" bindchange="bindFromTimeChange">
         <view class="picker">
-          从: {{fromtime}}
+          从 {{fromtime}}
         </view>
       </picker>
 
       <picker mode="time" value="{{totime}}" start="00:00" end="23:59" bindchange="bindToTimeChange">
         <view class="picker">
-          到: {{totime}}
+          到 {{totime}}
         </view>
       </picker>
     </view>
 
     <view class="section">
       <view class="section__title">我的位置</view>
-      <input name="input" placeholder="朝阳公园" />
-      <button size="mini">选择地点</button>
+      <input name="input" placeholder="{{adress}}" />
+      <button size="mini" bindtap='openMap'>选择地点</button>
     </view>
 
     <!-- <view class="section">

@@ -1,5 +1,5 @@
 <view class="container record-list">
-  <block wx:for="{{records}}" wx:for-item="records">
+  <block wx:for="{{records}}" wx:for-item="record">
     <text class="record-item">{{index + 1}}. {{record}}</text>
   </block>
 </view>
