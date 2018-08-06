@@ -9,6 +9,7 @@ Page({
     date: util.formatDate(new Date(Date.now())),
     fromtime: '08:00',
     totime: '09:00',
+    place: '',
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 

@@ -14,9 +14,10 @@
     </view>
 
     <view class="section">
+      <view class="section__title">日期: </view>
       <picker mode="date" value="{{date}}" start="Date.now()" end="Date.now() + 7" bindchange="bindDateChange">
         <view class="picker">
-          日期: {{date}}
+          {{date}}
         </view>
       </picker>
     </view>
@@ -36,25 +37,25 @@
       </picker>
     </view>
 
+    <view class="section">
+      <view class="section__title">我的位置</view>
+      <input name="input" placeholder="朝阳公园" />
+      <button size="mini">选择地点</button>
+    </view>
+
     <!-- <view class="section">
       <view class="section__title">时间：到：</view>
       
     </view> -->
 
-    <!-- <view class="section section_gap">
-      <view class="section__title">switch</view>
-      <switch name="switch" />
-    </view> -->
+
 
     <view class="section section_gap">
       <view class="section__title">slider</view>
       <slider name="slider" show-value></slider>
     </view>
 
-    <view class="section">
-      <view class="section__title">input</view>
-      <input name="input" placeholder="please input here" />
-    </view>
+
     <view class="section section_gap">
       <view class="section__title">radio</view>
       <radio-group name="radio-group">
@@ -74,8 +75,8 @@
       </checkbox-group>
     </view>
     <view class="btn-area">
-      <button formType="submit">提交</button>
-      <button formType="reset">重置</button>
+      <button size="mini" formType="submit">提交</button>
+      <button size="mini" formType="reset">重置</button>
     </view>
   </form>
 </view>
