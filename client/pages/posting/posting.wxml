@@ -39,7 +39,7 @@
 
     <view class="section">
       <view class="section__title">我的位置</view>
-      <input name="input" placeholder="{{adress}}" />
+      <input name="input" placeholder="{{mylocation}}" />
       <button size="mini" bindtap='openMap'>选择地点</button>
     </view>
 

@@ -2,8 +2,7 @@
   "pages": [
     "pages/posting/posting",
     "pages/friends/friends",
-    "pages/records/records",
-    "pages/map/map"
+    "pages/records/records"
   ],
   "window": {
     "backgroundTextStyle": "light",

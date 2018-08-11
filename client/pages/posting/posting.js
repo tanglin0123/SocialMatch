@@ -97,6 +97,7 @@ Page({
           mylocation: res.name,
           address: res.address
         })
+
       }
     })
   },
