@@ -4,6 +4,50 @@ const util = require('../../utils/util.js')
 
 Page({
   data: {
+    sportsTypeList: [{
+        key: 'PingPong',
+        value: '乒乓球'
+      },
+      {
+        key: 'Badminton',
+        value: '羽毛球'
+      },
+      {
+        key: 'Billards',
+        value: '台球'
+      },
+      {
+        key: 'Tennis',
+        value: '网球'
+      },
+      {
+        key: 'Soccer',
+        value: '足球'
+      },
+      {
+        key: 'Basketball',
+        value: '篮球'
+      },
+      {
+        key: 'Volleyball',
+        value: '排球'
+      }
+    ],
+
+    genderList: [{
+        key: 'male',
+        value: '男',
+        checked: 'true'
+      },
+      {
+        key: 'female',
+        value: '女'
+      }
+    ],
+
+    sportsTypeIndex: 0,
+    sportsType: 'PingPong',
+    gender: 'female',
     userInfo: {},
     hasUserInfo: false,
     date: util.formatDate(new Date(Date.now())),
@@ -19,6 +63,25 @@ Page({
   bindViewTap: function() {
     wx.navigateTo({
       url: '../records/records'
+    })
+  },
+
+
+  bindSportsTypePickerChange: function(e) {
+    console.log('SportsTypePicker发送选择改变，携带值为', e.detail.value)
+
+    this.setData({
+      sportsTypeIndex: e.detail.value,
+      sportsType: this.data.sportsTypeList[e.detail.value].key
+    })
+
+    console.log(this.data.sportsType)
+  },
+
+  genderRadioChange: function(e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value)
+    this.setData({
+      gender: e.detail.value
     })
   },
 
@@ -86,7 +149,7 @@ Page({
   openMap: function() {
     var that = this
     wx.chooseLocation({
-      success: function (res) {
+      success: function(res) {
         console.log(res.longitude)
         console.log(res.latitude)
         console.log(res.name)
